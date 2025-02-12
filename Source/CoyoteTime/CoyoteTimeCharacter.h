@@ -46,17 +46,27 @@ class ACoyoteTimeCharacter : public ACharacter
 
 public:
 	ACoyoteTimeCharacter();
-	
+	/** New jump functions */
+	void CoyoteJump();
+	void Landed(const FHitResult& Hit) override;
+	void Tick(float DeltaTime) override;
 
 protected:
+
+	/** Coyote time vars */
+	float CoyoteTimeDuration = 0.2f; // coyote time jump limit
+	float TimeSinceLeftGround = 0.0f;
+	bool bCanUseCoyoteTime = false;
 
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
-			
+		
 
+	/** Function to update coyote time */
+	void UpdateCoyoteTime(float DeltaTime);
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
