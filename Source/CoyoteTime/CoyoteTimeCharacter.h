@@ -47,6 +47,10 @@ class ACoyoteTimeCharacter : public ACharacter
 public:
 	ACoyoteTimeCharacter();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	
+>>>>>>> parent of 7b0bded (Coyote Time Working)
 =======
 	
 >>>>>>> parent of 7b0bded (Coyote Time Working)
